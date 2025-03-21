@@ -5,10 +5,10 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Sistema IoT para el Monitoreo de Niveles de Ruido en Entornos Cerrados o Pequeñas Áreas Urbanas} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Inteligencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
@@ -16,7 +16,7 @@
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
-\autor{Título y Nombre del autor}
+\autor{Ing. José Pedro Rivero Peña}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Título y Nombre del director}
@@ -26,10 +26,10 @@
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\empresaCliente{-}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
+\fechaINICIO{04 de marzo de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{22 de abril de 2025} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
 
 
@@ -85,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un prototipo de un sistema IoT para el monitoreo de niveles de ruido en entornos cerrados o pequeñas áreas urbanas. El trabajo tendrá un presupuesto preliminar estimado de {600} horas y un costo estimado de 240.000 ARS, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -106,51 +106,40 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+El monitoreo de los niveles acusticos en entornos cerrados y pequeños espacios urbanos es un problema que no se peude dejar de lado en la sociedad actual. La exposición constante a altos niveles de ruido puede generar estrés, 
+fatiga auditiva y afectar la concentración y productividad en oficinas, hospitales, aulas y parques. A pesar de la existencia de sistemas de medición de ruidos, estos suelen ser costosos, estacionarios
+ o requieren intervención manual para la toma y análisis de datos. En este contexto, surge la necesidad de desarrollar soluciones tecnológicas accesibles, autónomas y escalables para la medición en tiempo real de los niveles de ruido ambiental.
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+ Este proyecto propone el desarrollo de un sistema IOT, capaz de monitorear el nivel de ruido en tiepo real mediante sensores que recopilan la información y la transmiten a una plataforma en la nube para que usuarios puedan tener acceso a estos datos ademas de la gestion de alertas
+ de parametros. A diferencia de soluciones tradicionales, esta propuesta se enfoca en la modularidad y accesibilidad, permitiendo su implementación en diversos entornos sin necesidad de grandes inversiones en infraestructura.
+ La solución contempla el uso de sensores calibrados, microcontroladores con conectividad inalámbrica y un sistema de almacenamiento y visualización de datos basado en la nube, lo que facilita el acceso a la información desde cualquier dispositivo con conexión a internet.
+ La propuesta se diferencia de las existentes al integrar alertas configurables, escalabilidad para expansión del sistema y la posibilidad de incorporar algoritmos de inteligencia artificial en futuras fases para la identificación de patrones de ruido y predicción de niveles sonoros.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+ El sistema propuesto consta de varios módulos funcionales. En primer lugar, los nodos sensores distribuidos miden el nivel de ruido en diferentes ubicaciones y procesan localmente los datos antes de enviarlos a través de una red de comunicación Wi-Fi en entornos con infraestructura disponible 
+ y LoRa en espacios abiertos sin acceso a redes tradicionales. Los datos recopilados son almacenados en la nube y pueden visualizarse en una interfaz web, donde los usuarios pueden consultar registros históricos, recibir alertas en tiempo real y tomar decisiones en función de la información proporcionada 
+ por el sistema. Además, la optimización energética es un aspecto clave del diseño, por lo que los dispositivos funcionarán con baterías de larga duración y, en casos específicos, podrán incorporar alimentación solar para garantizar una operación continua.
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
+ Uno de los principales desafíos del proyecto es garantizar la precisión y confiabilidad de las mediciones en distintos entornos, para lo cual se ha considerado la incorporación de un segundo tipo de sensor para controlar factores ambientales como temperatura y humedad, que pueden influir en la propagación del sonido. 
+ Asimismo, se busca desarrollar un sistema que pueda expandirse fácilmente, permitiendo la incorporación de nuevos nodos de medición sin afectar el rendimiento general de la plataforma. La seguridad en la transmisión y almacenamiento de los datos también es un aspecto crítico, por lo que se emplearán protocolos de comunicación seguros como MQTT con cifrado.
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
+ Este emprendimiento personal busca proporcionar una herramienta útil para el monitoreo de ruido en espacios donde el control acústico es un factor clave para la calidad de vida. La facilidad de implementación y la flexibilidad del sistema permiten su aplicación en múltiples sectores, desde instituciones educativas y hospitales hasta gobiernos municipales 
+ interesados en gestionar la contaminación acústica en espacios públicos. Con una infraestructura abierta y escalable, este sistema puede evolucionar para integrar nuevas funcionalidades.
 
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+ A continuación, se presenta el diagrama del sistema, donde se ilustra la interacción entre sus diferentes componentes y el flujo de datos desde la captación hasta la visualización de los datos.
+
 
 \begin{figure}[htpb]
-\centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema.}
-\label{fig:diagBloques}
-\end{figure}
-
-\vspace{25px}
-
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
-
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+	\centering 
+	\includegraphics[width=.65\textwidth]{./Figuras/diagramaSist.png}
+	\caption{Diagrama del sistema.}
+	\label{fig:diagBloques}
+	\end{figure}
+	
+	\vspace{25px}
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
 
 
 \begin{table}[ht]
@@ -160,91 +149,77 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
+Auspiciante   &       -           &       -       	&      -  	\\ \hline
+Cliente       & \clientename      &\empclientename	&       - 	\\ \hline
 Impulsor      &                   &              	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores &      -             &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Equipo        & Por definir \newline 
+				Por definir         &      Por definir         	&   Por definir      	\\ \hline
+Opositores    &     -              &              	&        	\\ \hline
+Usuario final &  Gobiernos, empresas y civiles                &         -     	&        -	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-\end{itemize}
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
-
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
-
+ 
+Desarrollar un sistema IoT eficiente, escalable y de bajo costo para la medición y monitoreo en tiempo real de los niveles de ruido en entornos cerrados y pequeñas áreas urbanas que permita recopilar, procesar y visualizar datos acústicos de manera accesible, proporcionando a los usuarios información precisa sobre la contaminación sonora en distintos espacios. 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
+La propuesta está orientada a ofrecer un sistema modular, escalable y de bajo consumo energético, con una infraestructura adaptable a distintos escenarios de uso.
 
 El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+    \item \textbf{Diseño e implementación de un sistema IoT para monitoreo de ruido}, compuesto por nodos sensores, un módulo de comunicación y una plataforma en la nube.
+    \begin{itemize}
+        \item Desarrollo de un prototipo funcional con tres nodos sensores distribuidos en un entorno de prueba.
+        \item Selección, calibración y configuración de sensores de ruido con un rango de medición entre 30 y 120 dB, garantizando una precisión aceptable para el análisis acústico.
+        \item Integración con microcontrolador esp32 que permita el procesamiento de datos en la transmisión de información.
+        \item Implementación de un módulo de conectividad inalámbrica utilizando tecnologías Wi-Fi para entornos cerrados y LoRa para áreas urbanas con baja cobertura de red.
+    \end{itemize}
+    
+    \item \textbf{Desarrollo de una plataforma en la nube para almacenamiento y visualización de datos.}
+    \begin{itemize}
+        \item Configuración de una base de datos para el almacenamiento de registros históricos y análisis posterior.
+        \item Implementación de un dashboard web accesible para la consulta de datos en tiempo real, permitiendo la visualización de mediciones y tendencias históricas.
+        \item Incorporación de un sistema de alertas configurables para notificar a los usuarios cuando los niveles de ruido superen los umbrales predefinidos.
+    \end{itemize}
+    
+    \item \textbf{Optimización energética del sistema}, asegurando bajo consumo y autonomía en los nodos sensores.
+    \begin{itemize}
+        \item Implementación de estrategias de bajo consumo en los microcontroladores, utilizando modos de suspensión y transmisión periódica.
+        \item Evaluación del uso de baterías recargables con posibilidad de integración de paneles solares en escenarios de monitoreo prolongado.
+    \end{itemize}
+    
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
+El presente proyecto no incluye:
+\begin{itemize}
+    \item Reducción o mitigación del ruido ambiental, ya que su enfoque se limita a la medición y análisis de los niveles de ruido.
+    \item Integración con modelos de inteligencia artificial o análisis predictivo en esta fase inicial, aunque el sistema está diseñado para futuras ampliaciones en este sentido.
+    \item Desarrollo de una aplicación móvil nativa; el acceso a los datos y la visualización del sistema se realizarán únicamente a través de una interfaz web.
+    \item Implementación en escenarios reales fuera del alcance de pruebas controladas, limitándose en esta etapa a un entorno de prueba definido para la validación del prototipo.
+\end{itemize}
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+    \item No se considerarán regulaciones específicas sobre privacidad o normativas de manejo de datos, dado que el sistema solo recopilará información de niveles de ruido sin asociarlos a datos personales o identificables.
+    \item Se asumirá que las condiciones de infraestructura en los entornos de prueba son representativas de espacios urbanos y cerrados típicos, sin interferencias extremas que afecten la captura y transmisión de datos.
+    \item Se dispondrá de una red eléctrica estable en las áreas de prueba, permitiendo el funcionamiento de los sensores y la transmisión de datos sin interrupciones críticas.
+    \item No se considerarán eventos extremos como fallos masivos de red, cortes prolongados de energía o interferencias radioeléctricas severas que puedan comprometer el funcionamiento del sistema.
+    \item Se asumirá que las condiciones ambientales dentro de los entornos de prueba serán normales, sin presencia de factores climáticos extremos que puedan afectar la medición del sonido o el funcionamiento de los dispositivos.
+    \item Se trabajará con un conjunto limitado de nodos sensores, sin escalabilidad masiva en esta fase del proyecto, pero asegurando la posibilidad de expansión futura si se requiere.
+    \item No se contemplará la implementación de sistemas de redundancia avanzada para la transmisión y almacenamiento de datos, ya que el proyecto busca validar la funcionalidad básica del sistema en su fase inicial.
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
