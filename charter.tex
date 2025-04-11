@@ -628,38 +628,57 @@ Descripción &
 \end{table}
 
 
+
+
+
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
+a) Identificación de los riesgos y estimación de sus consecuencias:
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
-\begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
-\end{itemize}   
+A continuación, se identifican y analizan cinco riesgos relevantes que podrían afectar el desarrollo del proyecto. Para cada riesgo se estima su severidad (S) y su probabilidad de ocurrencia (O), en una escala del 1 al 10. Estos valores permiten priorizar los riesgos y tomar decisiones preventivas.
 
-Riesgo 2:
+Riesgo 1: Fallo en la conectividad de red (Wi-Fi o LoRa) durante la prueba del prototipo.
 \begin{itemize}
-	\item Severidad (S): X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad (S): 8.\\
+	Un fallo en la transmisión de datos impide la validación del sistema, lo que comprometería seriamente los resultados del proyecto.
+	\item Ocurrencia (O): 5.\\
+	Si bien se cuenta con infraestructura básica de red, existen riesgos asociados a interferencias, cobertura limitada o errores de configuración.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 2: Retraso en la entrega o disponibilidad de componentes electrónicos.
 \begin{itemize}
-	\item Severidad (S):  X.\\
-	Justificación...
-	\item Ocurrencia (O): Y.\\
-	Justificación...
+	\item Severidad (S): 6.\\
+	El proyecto depende de componentes específicos (sensores, ESP32, gateway). La falta de alguno de ellos retrasaría el cronograma.
+	\item Ocurrencia (O): 5.\\
+	Los componentes seleccionados son comunes y disponibles en el mercado local, pero pueden existir demoras logísticas o rotura de stock.
+\end{itemize}
+
+Riesgo 3: Fallos en la calibración de sensores de ruido.
+\begin{itemize}
+	\item Severidad (S): 6.\\
+	Una calibración incorrecta puede generar datos inexactos, afectando la utilidad del sistema.
+	\item Ocurrencia (O): 6.\\
+	La calibración requiere instrumentos de referencia (sonómetro) y condiciones controladas. No es trivial si hay ruido ambiental o interferencias.
+\end{itemize}
+
+Riesgo 4: Problemas de compatibilidad o errores en la integración entre firmware, backend y dashboard.
+\begin{itemize}
+	\item Severidad (S): 7.\\
+	Una integración fallida impide la operación del sistema completo y su validación como solución IoT funcional.
+	\item Ocurrencia (O): 5.\\
+	Aunque se usarán tecnologías probadas y bien documentadas, la integración entre sistemas heterogéneos siempre presenta desafíos.
+\end{itemize}
+
+Riesgo 5: Falta de tiempo para completar adecuadamente la documentación y preparación final.
+\begin{itemize}
+	\item Severidad (S): 4.\\
+	Un documento incompleto o una presentación pobre puede afectar la evaluación del trabajo, más allá del funcionamiento técnico.
+	\item Ocurrencia (O): 7.\\
+	Existe el riesgo de que se priorice la parte técnica, dejando la redacción para el final. Es un patrón común en proyectos similares.
 \end{itemize}
 
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+b) Tabla de gestión de riesgos:     
 
 \begin{table}[htpb]
 \centering
@@ -667,36 +686,67 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+Fallo en la conectividad de red (Wi-Fi o LoRa).      &  8 &  5 &  40   &  6  &  3  &   18   \\ \hline
+Retraso en la entrega o disponibilidad de componentes electrónicos.       & 6  &  5 &  30   &  5  &  3  &  15    \\ \hline
+Fallos en la calibración de sensores de ruido.       &  6 &  6 &   36  &  5  &  3  &   15   \\ \hline
+Problemas de compatibilidad o errores en la integración entre firmware, backend y dashboard.       & 7  & 5  &  35   &  5  & 3   & 15     \\ \hline
+Falta de tiempo para completar adecuadamente la documentación y preparación final.       & 4  &  7 &  28   &  -  & -   &   -   \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores o iguales a 30
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  \begin{itemize}
-	\item Severidad (S*): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O*): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
-	\end{itemize}
+Se desarrollan a continuación los planes de mitigación correspondientes a los riesgos cuyo índice (S × O) iguala o supera el umbral establecido de 30.
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 1: Fallo en la conectividad de red
 
-\end{consigna}
+Plan de mitigación: Se definirá desde el inicio una doble vía de comunicación para los nodos (Wi-Fi y LoRa), con pruebas independientes de conectividad para ambos entornos. Se establecerán mecanismos de almacenamiento local de datos ante fallos temporales de red.
+
+\begin{itemize}
+	\item Severidad (S*): 6\\
+	La severidad disminuye al incorporar redundancia de conectividad y mecanismos de respaldo que aseguran la recuperación de datos.
+	\item Probabilidad de ocurrencia (O*): 3\\
+	La ocurrencia baja al realizar pruebas previas de cobertura y configurar adecuadamente las redes en el entorno de validación.
+\end{itemize}
+
+Riesgo 2: Retraso en la entrega o disponibilidad de componentes
+
+Plan de mitigación: Se adelantará la compra de los componentes críticos al comienzo del proyecto. Se identificarán proveedores alternativos y se preverán equivalentes compatibles por si alguno no está disponible.
+
+\begin{itemize}
+	\item Severidad (S*): 6\\
+	Aunque un retraso puede afectar la ejecución, contar con alternativas permite mantener la continuidad del desarrollo.
+	\item Probabilidad de ocurrencia (O*): 2\\
+	Se reduce significativamente al anticipar las compras y contar con opciones de reemplazo técnico.
+\end{itemize}
+
+Riesgo 3: Fallos en la calibración de sensores
+
+Plan de mitigación: Se utilizará un sonómetro clase 2 como referencia para la calibración de todos los sensores antes de su despliegue. Se documentará el procedimiento y se repetirá si hay cambios ambientales significativos.
+
+\begin{itemize}
+	\item Severidad (S*): 5\\
+	Con una calibración controlada, el impacto de una desviación se reduce a un margen aceptable.
+	\item Probabilidad de ocurrencia (O*): 3\\
+	La ocurrencia disminuye al aplicar un proceso sistemático y validado para todos los nodos.
+\end{itemize}
+
+Riesgo 4: Errores en la integración de sistemas
+
+Plan de mitigación: Se establecerán pruebas de integración parciales en cada sprint. Se documentarán interfaces con claridad (API, formatos de datos) y se aplicarán herramientas de control de versiones y entornos virtuales.
+
+\begin{itemize}
+	\item Severidad (S*): 5\\
+	El riesgo de fallo completo se reduce, ya que los errores se detectan de forma temprana y localizada.
+	\item Probabilidad de ocurrencia (O*): 3\\
+	Se reduce mediante pruebas constantes y control estricto del ciclo de desarrollo.
+\end{itemize}
 
 
 \section{14. Gestión de la calidad}
