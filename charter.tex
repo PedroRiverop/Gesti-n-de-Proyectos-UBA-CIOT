@@ -212,7 +212,7 @@ El proyecto incluye:
     \item \textbf{Desarrollo de una plataforma en la nube para almacenamiento y visualización de datos.}
     \begin{itemize}
         \item Configuración de una base de datos para el almacenamiento de registros históricos y análisis posterior.
-        \item Implementación de un dashboard web accesible para la consulta de datos en tiempo real, que permita la visualización de mediciones y tendencias históricas.
+        \item Implementación de un \textit{dashboard} web accesible para la consulta de datos en tiempo real, que permita la visualización de mediciones y tendencias históricas.
         \item Incorporación de un sistema de alertas configurables para notificar a los usuarios cuando los niveles de ruido superen los umbrales predefinidos.
     \end{itemize}
     
@@ -263,13 +263,13 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
         \item El microcontrolador debe procesar localmente los datos y transmitirlos a la nube usando Wi-Fi o LoRaWan, según el entorno.
         \item El sistema debe generar una alerta automática cuando el nivel de ruido supere un umbral configurable.
         \item El sistema debe permitir almacenar los datos de manera estructurada y persistente en una base de datos alojada en un servidor remoto.
-        \item El usuario debe poder acceder a los datos mediante un dashboard web desde cualquier navegador moderno.
+        \item El usuario debe poder acceder a los datos mediante un \textit{dashboard} web desde cualquier navegador moderno.
         \item El sistema debe estar probado en un entorno controlado como prueba de concepto, con documentación del despliegue y resultados.
     \end{enumerate}
 
     \item \textbf{Requerimientos de interfaz (prioridad alta):}
     \begin{enumerate}
-        \item El usuario debe poder acceder a un dashboard web desde navegadores modernos sin necesidad de instalar software adicional.
+        \item El usuario debe poder acceder a un \textit{dashboard} web desde navegadores modernos sin necesidad de instalar software adicional.
         \item La interfaz debe mostrar los niveles de ruido actuales, valores históricos y tendencias de forma visual y comprensible (por ejemplo, gráficos de líneas, colores de alerta, etc.).
         \item El usuario debe poder configurar el umbral de alertas desde la misma interfaz.
     \end{enumerate}
@@ -281,7 +281,7 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
         \item El sistema debe funcionar en ambientes interiores y exteriores moderadamente protegidos.
     \end{enumerate}
 
-    \item \textbf{Requerimientos de backend y almacenamiento (prioridad alta):}
+    \item \textbf{Requerimientos de \textit{backend} y almacenamiento (prioridad alta):}
     \begin{enumerate}
         \item La base de datos utilizada deberá permitir el almacenamiento estructurado de registros históricos con acceso rápido (PostgreSQL o SQLite en entorno cloud).
     \end{enumerate}
@@ -293,8 +293,8 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
 
     \item \textbf{Requerimientos de seguridad (prioridad media):}
     \begin{enumerate}
-        \item El acceso al dashboard debe estar protegido mediante credenciales de usuario.
-        \item El backend debe implementar un sistema básico de autenticación, como JWT o similar, para proteger las rutas de acceso a datos.
+        \item El acceso al \textit{dashboard} debe estar protegido mediante credenciales de usuario.
+        \item El \textit{backend} debe implementar un sistema básico de autenticación, como JWT o similar, para proteger las rutas de acceso a datos.
         \item Las comunicaciones entre el nodo y el servidor deben utilizar protocolos seguros, salvo en casos justificados por limitaciones técnicas.
     \end{enumerate}
 
@@ -317,7 +317,7 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
     \clearpage
     \textbf{Criterios de aceptación}:
     \begin{itemize}
-        \item El dashboard debe mostrar los valores actuales de dB por nodo sensor.
+        \item El \textit{dashboard} debe mostrar los valores actuales de dB por nodo sensor.
         \item La información debe actualizarse automáticamente cada 5 minutos o menos.
         \item El diseño debe ser claro, responsivo y accesible desde cualquier navegador moderno.
     \end{itemize}
@@ -328,7 +328,7 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
 
     \textbf{Criterios de aceptación}:
     \begin{itemize}
-        \item El usuario podrá configurar el umbral desde el dashboard.
+        \item El usuario podrá configurar el umbral desde el \textit{dashboard}.
         \item La alerta se visualizará de forma clara (por ejemplo, color rojo o mensaje de advertencia).
         \item El sistema debe generar la alerta, mostrarla en el aplicativo web y notificar al usuario.
     \end{itemize}
@@ -341,7 +341,7 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
     \begin{itemize}
         \item Cada medición debe almacenarse con marca de tiempo y origen del sensor.
         \item El sistema debe guardar al menos 7 días consecutivos de datos históricos.
-        \item La base de datos debe ser accesible desde el backend de forma eficiente.
+        \item La base de datos debe ser accesible desde el \textit{backend} de forma eficiente.
     \end{itemize}
 
     \item \textbf{Como administrador del sistema quiero poder exportar los datos en formato CSV o JSON para usarlos en otros análisis.}
@@ -350,7 +350,7 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
 
     \textbf{Criterios de aceptación}:
     \begin{itemize}
-        \item El dashboard debe tener un botón de exportación por rango de fechas.
+        \item El \textit{dashboard} debe tener un botón de exportación por rango de fechas.
         \item El archivo generado debe contener datos válidos y bien estructurados.
         \item Debe ser posible descargarlo desde cualquier navegador.
     \end{itemize}
@@ -374,7 +374,7 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
     \begin{itemize}
         \item El sistema debe mostrar el estado de conexión de cada nodo (activo/inactivo).
         \item Cada nodo debe tener un identificador único.
-        \item El dashboard debe mostrar su ubicación aproximada o nombre de ubicación.
+        \item El \textit{dashboard} debe mostrar su ubicación aproximada o nombre de ubicación.
     \end{itemize}
 
     \item \textbf{Como técnico de campo quiero desplegar un nodo sensor y que este se conecte automáticamente al sistema para facilitar su instalación.}
@@ -383,7 +383,7 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
 
     \textbf{Criterios de aceptación}:
     \begin{itemize}
-        \item El nodo debe autoconectarse a la red y al backend al encenderse.
+        \item El nodo debe autoconectarse a la red y al \textit{backend} al encenderse.
         \item El nodo debe enviar una primera medición para confirmar su activación.
         \item El proceso no debe requerir configuración manual avanzada.
     \end{itemize}
@@ -396,9 +396,9 @@ A continuación, se enumeran los entregables que serán producidos como resultad
 
 \begin{itemize}
     \item Prototipo físico funcional del sistema IoT con al menos tres nodos sensores de ruido operativos.
-    \item Código fuente del firmware para los microcontroladores, con comentarios y estructura comprensible.
-    \item Backend del sistema implementado en entorno cloud con endpoints documentados.
-    \item Dashboard web funcional para la visualización de datos, alertas e historial de mediciones.
+    \item Código fuente del \textit{firmware} para los microcontroladores, con comentarios y estructura comprensible.
+    \item \textit{backend} del sistema implementado en entorno cloud con endpoints documentados.
+    \item \textit{Dashboard} web funcional para la visualización de datos, alertas e historial de mediciones.
     \item Base de datos implementada y operativa, con estructura simple y datos históricos registrados durante las pruebas.
     \item Diagrama de bloques del sistema.
     \item Esquema básico de conexiones electrónicas.
@@ -423,32 +423,32 @@ A continuación se presenta el desglose del trabajo en tareas (WBS) del proyecto
         \item Diseño del sistema y definición de arquitectura general (16 h) — \textit{HU1–HU7}
         \item Selección de sensores y componentes electrónicos (8 h) — \textit{HU3, HU7}
         \item Diseño del diagrama de bloques del sistema (6 h) — \textit{HU1–HU3}
-        \item Definición de estructura de base de datos y backend (10 h) — \textit{HU3, HU4}
+        \item Definición de estructura de base de datos y \textit{backend} (10 h) — \textit{HU3, HU4}
     \end{enumerate}
 
-    \item Desarrollo del firmware para nodos sensores (65 h)
+    \item Desarrollo del \textit{firmware} para nodos sensores (65 h)
     \begin{enumerate}
         \item Configuración e integración de sensores de ruido con microcontrolador (15 h) — \textit{HU3, HU7}
         \item Programación del procesamiento de señales de medición en dB (10 h) — \textit{HU3}
         \item Implementación de modos de bajo consumo  \textit{deep sleep} (10 h) — \textit{HU7}
         \item Transmisión de datos vía Wi-Fi y LoRa (15 h) — \textit{HU3, HU7}
         \item Calibración básica con sonómetro de referencia (8 h) — \textit{HU3}
-        \item Documentación técnica del firmware (7 h) — \textit{HU3}
+        \item Documentación técnica del \textit{firmware} (7 h) — \textit{HU3}
     \end{enumerate}
 
-    \item Backend y almacenamiento de datos (60 h)
+    \item \textit{backend} y almacenamiento de datos (60 h)
     \begin{enumerate}
         \item Configuración de base de datos (PostgreSQL) (8 h) — \textit{HU3}
-        \item Implementación del backend en servidor cloud (10 h) — \textit{HU3, HU4}
+        \item Implementación del \textit{backend} en servidor cloud (10 h) — \textit{HU3, HU4}
         \item Desarrollo de API para recepción y consulta de datos (15 h) — \textit{HU3, HU4, HU5}
         \item Gestión de usuarios y autenticación (JWT) (10 h) — \textit{HU5}
         \item Pruebas de integración y validación (7 h) — \textit{HU3–HU5}
-        \item Documentación técnica del backend (10 h) — \textit{HU3}
+        \item Documentación técnica del \textit{backend} (10 h) — \textit{HU3}
     \end{enumerate}
 
-    \item Desarrollo del dashboard web (60 h)
+    \item Desarrollo del \textit{dashboard} web (60 h)
     \begin{enumerate}
-        \item Maquetado del dashboard e interfaz responsiva (10 h) — \textit{HU1}
+        \item Maquetado del \textit{dashboard} e interfaz responsiva (10 h) — \textit{HU1}
         \item Visualización de niveles de ruido (15 h) — \textit{HU1}
         \item Indicadores visuales (10 h) — \textit{HU1}
         \item Configuración de umbrales de alerta por el usuario (8 h) — \textit{HU2}
@@ -494,6 +494,8 @@ A continuación se presenta el desglose del trabajo en tareas (WBS) del proyecto
     \item Las duraciones de las tareas están expresadas en horas.
 \end{itemize}
 
+\newpage
+
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 En la figura 3 se muestra el diagrama de Gantt a nivel general del proyecto.
@@ -504,6 +506,7 @@ En la figura 3 se muestra el diagrama de Gantt a nivel general del proyecto.
     \label{fig:AoN}
     \end{figure}
 
+
 En la figura 4 se muestra el diagrama de Gantt para la planificación y diseño del sistema.
 \begin{figure}[htpb]
     \centering 
@@ -512,7 +515,7 @@ En la figura 4 se muestra el diagrama de Gantt para la planificación y diseño 
     \label{fig:AoN}
     \end{figure}
 
-En la figura 5 se muestra el diagrama de Gantt para el desarrollo del firmware para nodos sensores.
+En la figura 5 se muestra el diagrama de Gantt para el desarrollo del \textit{firmware} para nodos sensores.
 \begin{figure}[htpb]
     \centering 
     \includegraphics[width=1.05\textwidth]{./Figuras/gantt3.png}
@@ -520,7 +523,9 @@ En la figura 5 se muestra el diagrama de Gantt para el desarrollo del firmware p
     \label{fig:AoN}
     \end{figure}
 
-En la figura 6 se muestra el diagrama de Gantt para el desarrollo de Backend y almacenamiento de datos.
+    \newpage
+
+En la figura 6 se muestra el diagrama de Gantt para el desarrollo de \textit{backend} y almacenamiento de datos.
 \begin{figure}[htpb]
     \centering 
     \includegraphics[width=1.05\textwidth]{./Figuras/gantt4.png}
@@ -528,13 +533,15 @@ En la figura 6 se muestra el diagrama de Gantt para el desarrollo de Backend y a
     \label{fig:AoN}
     \end{figure}
 
-En la figura 7 se muestra el diagrama de Gantt para el desarrollo del Desarrollo del dashboard web.
+En la figura 7 se muestra el diagrama de Gantt para el desarrollo del Desarrollo del \textit{dashboard} web.
 \begin{figure}[htpb]
     \centering 
     \includegraphics[width=1.05\textwidth]{./Figuras/gantt5.png}
     \caption{Diagrama de Gantt etapa 4.}
     \label{fig:AoN}
     \end{figure}
+
+    \newpage
 
 En la figura 8 se muestra el diagrama de Gantt para el despliegue del prototipo y validación.
 \begin{figure}[htpb]
@@ -552,6 +559,8 @@ En la figura 9 se muestra el diagrama de Gantt para el desarrollo de la document
     \label{fig:AoN}
     \end{figure}
 
+
+    \newpage
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
@@ -627,13 +636,9 @@ Descripción &
 \caption*{Tabla 1. Presupuesto del proyecto.}
 \end{table}
 
-
-
-
-
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
-a) Identificación de los riesgos y estimación de sus consecuencias:
+\textbf{a) Identificación de los riesgos y estimación de sus consecuencias:}
 
 A continuación, se identifican y analizan cinco riesgos relevantes que podrían afectar el desarrollo del proyecto. Para cada riesgo se estima su severidad (S) y su probabilidad de ocurrencia (O), en una escala del 1 al 10. Estos valores permiten priorizar los riesgos y tomar decisiones preventivas.
 
@@ -645,10 +650,12 @@ Riesgo 1: Fallo en la conectividad de red (Wi-Fi o LoRa) durante la prueba del p
 	Si bien se cuenta con infraestructura básica de red, existen riesgos asociados a interferencias, cobertura limitada o errores de configuración.
 \end{itemize}
 
+\newpage
+
 Riesgo 2: Retraso en la entrega o disponibilidad de componentes electrónicos.
 \begin{itemize}
 	\item Severidad (S): 6.\\
-	El proyecto depende de componentes específicos (sensores, ESP32, gateway). La falta de alguno de ellos retrasaría el cronograma.
+	El proyecto depende de componentes específicos (sensores, ESP32, \textit{gateway}). La falta de alguno de ellos retrasaría el cronograma.
 	\item Ocurrencia (O): 5.\\
 	Los componentes seleccionados son comunes y disponibles en el mercado local, pero pueden existir demoras logísticas o rotura de stock.
 \end{itemize}
@@ -661,7 +668,7 @@ Riesgo 3: Fallos en la calibración de sensores de ruido.
 	La calibración requiere instrumentos de referencia (sonómetro) y condiciones controladas. No es trivial si hay ruido ambiental o interferencias.
 \end{itemize}
 
-Riesgo 4: Problemas de compatibilidad o errores en la integración entre firmware, backend y dashboard.
+Riesgo 4: Problemas de compatibilidad o errores en la integración entre \textit{firmware}, \textit{backend} y \textit{dashboard}.
 \begin{itemize}
 	\item Severidad (S): 7.\\
 	Una integración fallida impide la operación del sistema completo y su validación como solución IoT funcional.
@@ -678,7 +685,7 @@ Riesgo 5: Falta de tiempo para completar adecuadamente la documentación y prepa
 \end{itemize}
 
 
-b) Tabla de gestión de riesgos:     
+\textbf{b) Tabla de gestión de riesgos:}     
 
 \begin{table}[htpb]
 \centering
@@ -689,7 +696,7 @@ Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 Fallo en la conectividad de red (Wi-Fi o LoRa).      &  8 &  5 &  40   &  6  &  3  &   18   \\ \hline
 Retraso en la entrega o disponibilidad de componentes electrónicos.       & 6  &  5 &  30   &  5  &  3  &  15    \\ \hline
 Fallos en la calibración de sensores de ruido.       &  6 &  6 &   36  &  5  &  3  &   15   \\ \hline
-Problemas de compatibilidad o errores en la integración entre firmware, backend y dashboard.       & 7  & 5  &  35   &  5  & 3   & 15     \\ \hline
+Problemas de compatibilidad o errores en la integración entre \textit{firmware}, backend y \textit{dashboard}.       & 7  & 5  &  35   &  5  & 3   & 15     \\ \hline
 Falta de tiempo para completar adecuadamente la documentación y preparación final.       & 4  &  7 &  28   &  -  & -   &   -   \\ \hline
 \end{tabularx}%
 \end{table}
@@ -700,7 +707,7 @@ Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean may
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
-c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+\textbf{c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:}
  
 Se desarrollan a continuación los planes de mitigación correspondientes a los riesgos cuyo índice (S × O) iguala o supera el umbral establecido de 30.
 
@@ -752,42 +759,136 @@ Plan de mitigación: Se establecerán pruebas de integración parciales en cada 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
-
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento con su correspondiente número.
+Estas acciones aseguran que el sistema cumple con los criterios funcionales, técnicos y de uso esperados, considerando tanto 
+el punto de vista técnico como la experiencia del usuario final.
 
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar.
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar. 
+
+\item Req \#1: El sistema debe medir niveles de ruido en tiempo real cada 5 minutos.
+\begin{itemize}
+	\item Verificación: Se analizará el \textit{firmware} del nodo sensor para confirmar el uso de temporizadores y ciclos de lectura 
+    periódicos cada 300 segundos.
+	\item Validación: Se dejará el nodo funcionando durante una hora y se revisará en el \textit{dashboard} que los datos se actualicen 
+    al menos 12 veces con intervalos regulares.
+\end{itemize}
+
+\item Req \#2: El sensor debe medir en un rango de 30 a 120 dB con una precisión de ±5 dB.
+\begin{itemize}
+	\item Verificación: Se revisará la hoja de datos del sensor y se realizará una calibración comparativa con un sonómetro.
+	\item Validación: Se expondrá el nodo a diferentes fuentes de ruido y se validará que los valores mostrados sean coherentes 
+    con el entorno.
+\end{itemize}
+
+\item Req \#3: Los datos deben almacenarse en la base de datos en la nube.
+\begin{itemize}
+	\item Verificación: Se inspeccionará el código del backend para confirmar que la inserción en base de datos se realiza 
+    correctamente vía API.
+	\item Validación: Se generarán datos de prueba desde un nodo y se consultará manualmente la base para verificar que 
+    fueron registrados.
+\end{itemize}
+
+\item Req \#4: El sistema debe generar una alerta visual cuando se supere un umbral de ruido.
+\begin{itemize}
+	\item Verificación: Se evaluará la función condicional de alerta en el código del \textit{frontend} y se probará el diseño visual en 
+    ambiente de desarrollo.
+	\item Validación: Se simulará un valor superior al umbral y se pedirá al usuario que identifique si la alerta fue clara y 
+    notoria.
+\end{itemize}
+
+\item Req \#5: El usuario debe poder visualizar los datos desde un \textit{dashboard} web.
+\begin{itemize}
+	\item Verificación: Se verificará que el \textit{frontend} se despliegue correctamente en un entorno local y se integre con el \textit{backend}.
+	\item Validación: Se pedirá a un usuario externo que acceda al sistema y confirme que puede consultar los datos sin 
+    asistencia técnica.
+\end{itemize}
+
+\item Req \#6: El acceso al sistema debe estar protegido mediante autenticación por credenciales.
+\begin{itemize}
+	\item Verificación: Se revisará la implementación del sistema de autenticación (JWT) en el \textit{backend} y se simularán accesos 
+    no autorizados.
+	\item Validación: Se solicitará al cliente probar la funcionalidad ingresando con sus credenciales y confirmando la 
+    experiencia.
+\end{itemize}
+
+\item Req \#7: El nodo debe operar al menos 5 días sin recarga.
+\begin{itemize}
+	\item Verificación: Se calculará el consumo estimado en modo deep sleep y transmisión periódica con base en hojas de datos 
+    y pruebas reales.
+	\item Validación: Se dejará un nodo funcionando con batería durante 5 días en modo real y se registrará su autonomía.
+\end{itemize}
+
+\item Req \#8: El sistema debe exportar los datos históricos en CSV.
+\begin{itemize}
+	\item Verificación: Se probará la ruta de exportación y se verificará el contenido del archivo generado con datos de prueba.
+	\item Validación: Se solicitará al cliente descargar un archivo y confirmar que contiene la información esperada y en 
+    formato comprensible.
+\end{itemize}
+
+\item Req \#9: El prototipo debe estar documentado con manual de uso e instalación.
+\begin{itemize}
+	\item Verificación: Se revisará que el manual incluya diagramas, instrucciones de montaje y configuración paso a paso.
+	\item Validación: Se pedirá a un tercero no involucrado que instale el nodo usando el manual, observando si 
+    logra hacerlo sin asistencia.
+\end{itemize}
+
+\item Req \#10: El \textit{dashboard} debe mostrar correctamente la ubicación y estado de cada nodo.
+\begin{itemize}
+	\item Verificación: Se comprobará que el \textit{backend} identifique a cada nodo con un ID único y que esa información llegue al 
+    \textit{frontend}.
+	\item Validación: Se simularán desconexiones y se verificará que el usuario visualice correctamente el estado del nodo 
+    (activo/inactivo).
 \end{itemize}
 
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  
-
-Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  
-
-En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
-
-\end{consigna}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+A continuación, se describen las pautas previstas para garantizar una finalización ordenada y reflexiva del proyecto.
 
 \begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, los problemas que surgieron y cómo se solucionaron:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
-	  - Indicar esto y quién financiará los gastos correspondientes.
+	\item Análisis del cumplimiento del Plan de Proyecto:
+	      \begin{itemize}
+		      \item Responsable: Ing. José Pedro Rivero Peña
+		      \item Procedimiento: Se llevará a cabo una revisión detallada del Plan de Proyecto original, con el objetivo de:
+		            \begin{itemize}
+			            \item Verificar si las tareas planificadas fueron ejecutadas en los tiempos previstos según el diagrama de Gantt.
+			            \item Evaluar si los objetivos generales y específicos del proyecto se alcanzaron de forma completa y satisfactoria.
+			            \item Confirmar si los requerimientos funcionales, técnicos y visuales definidos en la etapa inicial fueron cumplimentados y validados correctamente.
+			            \item Comparar las historias de usuario desarrolladas con las planificadas en el backlog para medir el grado de cobertura funcional real.
+		            \end{itemize}
+	      \end{itemize}
+	
+	\item Identificación de técnicas, problemas y soluciones:
+	      \begin{itemize}
+		      \item Responsable: Ing. José Pedro Rivero Peña
+		      \item Procedimiento: Dado que se trata de un emprendimiento personal, se realizará un análisis retrospectivo documentado por el autor con el fin de:
+		            \begin{itemize}
+			            \item Registrar los principales problemas que surgieron durante el desarrollo del proyecto, tanto técnicos como organizativos.
+			            \item Detallar las soluciones implementadas y las decisiones de diseño que permitieron sortear los obstáculos.
+			            \item Evaluar la efectividad de las técnicas y metodologías utilizadas, incluyendo selección de hardware, frameworks de desarrollo, flujo de trabajo y herramientas de integración.
+			            \item Redactar un informe de lecciones aprendidas, destacando las buenas prácticas, las decisiones acertadas y las áreas en las que podría haberse optimizado el trabajo. Este documento servirá como base para futuros desarrollos o iteraciones del sistema.
+		            \end{itemize}
+	      \end{itemize}
+
+	\item Acto de cierre y agradecimientos:
+	      \begin{itemize}
+		      \item Responsable: Ing. José Pedro Rivero Peña
+		      \item Procedimiento: Se organizará un acto de cierre institucional-académico conforme a lo previsto en el plan del trabajo final. Este proceso incluirá:
+		            \begin{itemize}
+			            \item Defensa pública del proyecto: se realizará una presentación formal del sistema desarrollado, sus objetivos, resultados alcanzados, validaciones realizadas y conclusiones. Se prevé realizarla de forma virtual, facilitando la participación de los evaluadores y del público interesado.
+			            \item Agradecimientos formales:
+			                  \begin{itemize}
+				                  \item A las autoridades y docentes de la carrera de Especialización en Internet de las Cosas de la Universidad de Buenos Aires, por el acompañamiento académico y la formación recibida.
+				                  \item A quienes colaboraron de manera técnica o logística durante el desarrollo del sistema, aportando conocimientos o ayudando en fases específicas del proyecto.
+				                  \item A la institución universitaria que brindó el marco formativo y metodológico necesario para llevar adelante esta propuesta.
+				                  \item Al tribunal evaluador, por su tiempo y el valor de su evaluación crítica y constructiva.
+			                  \end{itemize}
+			            \item Financiamiento: cualquier gasto asociado al cierre del proyecto (materiales de presentación, soporte digital, conectividad, impresión) será cubierto directamente por el autor.
+		            \end{itemize}
+	      \end{itemize}
 \end{itemize}
 
-\end{consigna}
 
 \end{document}
