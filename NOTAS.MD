@@ -9,7 +9,7 @@ Este documento presenta un análisis detallado sobre el uso, utilidad, complejid
 ---
 
 ## Etapa 1: Desarrollo del prototipo IoT
-
+En la etapa inicial se propone una implementación acotada, con el objetivo de validar la arquitectura general del sistema, probar el funcionamiento de sensores, microcontroladores y protocolos de comunicación. Para el caso de monitoreo urbano, se considera adecuado instalar tres nodos en distintos puntos de un mismo parque o pequeña plaza.
 En la etapa inicial se plantea una implementación acotada, que permita:
 
 - Validar el funcionamiento del sistema en campo
@@ -40,6 +40,8 @@ En una segunda fase, pensada para la especialización en Inteligencia Artificial
 
 Esta expansión requiere una arquitectura modular y escalable, que permita el funcionamiento independiente de cada nodo y conserve la integración mediante MQTT, independientemente de si la red es Wi-Fi o LoRa.
 
+Desde el punto de vista de diseño, el sistema se plantea como modular y escalable, de modo que cada nodo actúe como una unidad independiente de captura, transmisión y eventual análisis en el borde (edge computing). La arquitectura definida permite conservar el modelo de comunicación mediante MQTT, independiente del tipo de red (Wi-Fi o LoRa).
+
 ---
 
 ## Comparación de escenarios
@@ -56,3 +58,9 @@ Esta expansión requiere una arquitectura modular y escalable, que permita el fu
 ## Conclusión
 
 Se considera adecuada la implementación inicial de tres nodos como estrategia didáctica y técnica, que permite validar el sistema, demostrar utilidad real y sentar las bases para su evolución futura con técnicas de inteligencia artificial.
+
+## Observaciones
+
+La expansión hacia múltiples zonas urbanas requiere mayores recursos: gestión de energía, logística de instalación, infraestructura LoRa (gateways), mantenimiento y sincronización.
+
+Sin embargo, proporciona un valor agregado significativo para el análisis urbano y el entrenamiento de modelos inteligentes.
