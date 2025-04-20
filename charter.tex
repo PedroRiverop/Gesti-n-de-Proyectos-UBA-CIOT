@@ -256,7 +256,7 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
     \begin{enumerate}
         \item El sistema debe medir niveles de ruido ambiental en tiempo real con una frecuencia configurable (mínimo una medición cada 5 minutos).
         \item Los sensores deben registrar valores en dB con un rango de 30–120 dB y precisión máxima de ±2 dB.
-        \item El microcontrolador debe procesar localmente los datos y transmitirlos a la nube ua través de Wi-Fi o LoRaWan, según el entorno.
+        \item El microcontrolador debe procesar localmente los datos y transmitirlos a la nube a través de Wi-Fi o LoRaWan, según el entorno.
         \item El sistema debe generar una alerta automática cuando el nivel de ruido supere un umbral configurable.
         \item El sistema debe permitir almacenar los datos de manera estructurada y persistente en una base de datos alojada en un servidor remoto.
         \item El usuario debe poder acceder a los datos mediante un \textit{dashboard} web desde cualquier navegador moderno.
@@ -301,7 +301,7 @@ A continuación, se enumeran los requerimientos del sistema propuesto.
     \end{enumerate}
 
 
-    \item \textbf{Requerimientos de cocumentación (prioridad alta):}
+    \item \textbf{Requerimientos de documentación (prioridad alta):}
     \begin{enumerate}
         \item Se debe desarrollar una memoria descriptiva del sistema, incluyendo el hardware, software y configuración utilizada.
         \item Se debe incluir un manual de usuario y un manual de instalación y configuración. 
@@ -655,7 +655,7 @@ Descripción &
 
 A continuación, se identifican y analizan cinco riesgos relevantes que podrían afectar el desarrollo del proyecto. Para cada riesgo se estima su severidad (S) y su probabilidad de ocurrencia (O), en una escala del 1 al 10. Estos valores permiten priorizar los riesgos y tomar decisiones preventivas.
 
-Riesgo 1: Fallo en la conectividad de red (Wi-Fi o LoRa) durante la prueba del prototipo.
+Riesgo 1: fallo en la conectividad de red (Wi-Fi o LoRa) durante la prueba del prototipo.
 \begin{itemize}
 	\item Severidad (S): 8.\\
 	Un fallo en la transmisión de datos impide la validación del sistema, lo que comprometería seriamente los resultados del proyecto.
@@ -665,7 +665,7 @@ Riesgo 1: Fallo en la conectividad de red (Wi-Fi o LoRa) durante la prueba del p
 
 \newpage
 
-Riesgo 2: Retraso en la entrega o disponibilidad de componentes electrónicos.
+Riesgo 2: retraso en la entrega o disponibilidad de componentes electrónicos.
 \begin{itemize}
 	\item Severidad (S): 6.\\
 	El proyecto depende de componentes específicos (sensores, ESP32, \textit{gateway}). La falta de alguno de ellos retrasaría el cronograma.
@@ -673,7 +673,7 @@ Riesgo 2: Retraso en la entrega o disponibilidad de componentes electrónicos.
 	Los componentes seleccionados son comunes y disponibles en el mercado local, pero pueden existir demoras logísticas o rotura de stock.
 \end{itemize}
 
-Riesgo 3: Fallos en la calibración de sensores de ruido.
+Riesgo 3: fallos en la calibración de sensores de ruido.
 \begin{itemize}
 	\item Severidad (S): 6.\\
 	Una calibración incorrecta puede generar datos inexactos, afectando la utilidad del sistema.
@@ -681,7 +681,7 @@ Riesgo 3: Fallos en la calibración de sensores de ruido.
 	La calibración requiere instrumentos de referencia (sonómetro) y condiciones controladas. No es trivial si hay ruido ambiental o interferencias.
 \end{itemize}
 
-Riesgo 4: Problemas de compatibilidad o errores en la integración entre \textit{firmware}, \textit{backend} y \textit{dashboard}.
+Riesgo 4: problemas de compatibilidad o errores en la integración entre \textit{firmware}, \textit{backend} y \textit{dashboard}.
 \begin{itemize}
 	\item Severidad (S): 7.\\
 	Una integración fallida impide la operación del sistema completo y su validación como solución IoT funcional.
@@ -689,7 +689,7 @@ Riesgo 4: Problemas de compatibilidad o errores en la integración entre \textit
 	Aunque se usarán tecnologías probadas y bien documentadas, la integración entre sistemas heterogéneos siempre presenta desafíos.
 \end{itemize}
 
-Riesgo 5: Falta de tiempo para completar adecuadamente la documentación y preparación final.
+Riesgo 5: falta de tiempo para completar adecuadamente la documentación y preparación final.
 \begin{itemize}
 	\item Severidad (S): 4.\\
 	Un documento incompleto o una presentación pobre puede afectar la evaluación del trabajo, más allá del funcionamiento técnico.
